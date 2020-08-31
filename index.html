@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+ <!--- This auto load grant examinantion web app was designed by Oyagbile Oluwaseun
+  email: oyagbileoluwaseun@gmail.com
+   ================================================== -->
+
+<html>
+  <head>
+ <!--- basic page needs to perform well on a mobile device and links to a better font
+   ================================================== -->
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap" rel="stylesheet">
+ <!--- title of the page
+   ================================================== -->
+    <title>Grant Assessment Test</title>
+
+    <!--- inputing the sytling into the web, the css file is marged here with the html code.
+   ================================================== -->
+    <style>
+      body{
+        margin:0px;
+        padding:0px;
+       background: linear-gradient(90deg, rgba(151,157,177,1) 43%, rgba(255,255,255,1) 100%);
+        height: 100%;
+        width: 100%;
+      }
+      .quiz-app{
+        margin: 8px auto;
+        height: 595px;
+        width: 870px;
+        background-color:#252C4A;
+        border-style: solid;
+        border-width: 18px;
+        border-color:#282B49;
+        border-radius: 30px;
+      }
+      #code{
+        margin-left: 90px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        color:#BFBFBF;
+      }
+      .time-bar{
+        margin:30px;
+        width: 300px;
+        height:30px;
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 30px;
+        border-color: #41476A;
+        background-color:#252C4A;
+      }
+      .time-left{
+        width: 300px;
+        height:30px;
+        border-style: none;
+        border-radius: 30px;
+        border-color: rgb(250,81,113);
+        background-color: rgb(250,81,113);
+
+        
+      }
+      .time{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        color:white;
+        text-align: center;
+      }
+      .q-text{
+        color:#8E97BD;
+        text-align: left;
+        margin-left:20px;
+        margin-top: 30px;
+         font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        font-size: 20px;
+      }
+      #question{
+         font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        font-size: 14px;
+        color:white;
+        padding:10px 20px 10px 20px;
+
+      }
+      .btn{
+        width: 350px;
+        height: 80px;
+        margin-bottom: 10px;
+        margin-left: 40px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 20px;
+        background-color:transparent;
+        color:white;
+        border-color: #254567;
+        outline:none;
+        
+        
+      }
+      .btn:hover{
+        background: linear-gradient(90deg, rgba(250,81,113,1) 46%, rgba(250,81,113,1) 50%, rgba(37,44,74,1) 100%);
+        
+      }
+      #next{
+        padding: 15px 40px 15px 40px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        font-size: 15px;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 30px;
+        background-color:#117EEB;
+        color:white;
+        border-color: #117EEB;
+        margin-left: 100px;
+        margin-top: 10px;
+        outline:none;
+
+
+      }
+      #next:hover{
+        background-color: white;
+        color:#117EEB;
+        border-color:white;
+      }
+      #dots{
+        color:#8E97BD;
+        margin-left: 20px;
+        margin-top: -20px;
+      }
+      .il{
+        color:white;
+        font-size: 100px;
+        margin-top:5px;
+        margin-left: 110px;
+      }
+      .app{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        font-size: 35px;
+        color:white;
+        text-align: center;
+      }
+      
+      
+    </style>
+  </head>
+  <body>
+
+    <!--- the first interface displayed
+   ================================================== -->
+    <div class="main-div">
+        <div class="quiz-app">
+        <div class="start" id="start" style="display: block;">
+        <img src="avater1.png" height="150px" width="160px" class="il"/>
+        <h1 class="app">Grant Assessment Test</h1>
+        <p id="code">&copy; Code by Oyagbile Oluwaseun</p>
+        <div style="background-color: lightblue; border-radius: 25px;">
+          <h2 class="app" style="color: #252C4A;">Instructions</h2>
+        </div>
+        <ul>
+          <li style="color: gold;"><h1>The test will automatically start in 30 seconds........................  { Do not press any key }</h1></li>
+          <li style="color: white;"><h3>You have 70 seconds to answer each question of 10 in all (You need a good internet connection).</h3></li>
+          <li style="color: white;"><h3>You cannot at any point go back to a question answered, so pay maximum attention before selecting an answer.</h3></li>
+          <h2 style="color: white; text-align: center;">BEST OF LUCK.....!!!!</h2>
+        </ul>
+
+        </div>
+
+        <!--- code for the assessement page here with little styling
+   ================================================== -->
+          <div class="quiz" id="quiz-secreen" style="display:none;">          
+            <div class="time-bar">
+            <div class="time-left" id="timeLeft">
+            
+            </div>
+          </div>
+          <div class="question-no">
+            <h3 class="q-text">Questions<span id="currentQuestion"> 1</span> / <span id="totalQuestions"> 11</span></h3>
+            <h3 id="dots">.............................................................</h3>
+       </div>
+          <div class="qus">
+            <h1 id="question"></h1>
+
+          </div>
+          <div class="choices">
+            <button class="btn" id="opt1"></button>
+            <button class="btn" id="opt2"></button>
+            <button class="btn" id="opt3"></button>
+            <button class="btn" id="opt4"></button>
+          </div>
+          <div class="next-btn">
+            <button id="next">Next</button>
+          </div>
+        </div>
+        <div class="result" id="resultSecreen" style="display: none;">
+           <img src="avater2.png" height="150px" width="150px" class="il"/>
+        <h1 class="app"> Score : <span id="score" >6</span></h1>
+        <p id="code">&copy; Code by Oyagbile Oluwaseun</p>
+
+
+        </div>
+        </div>
+    </div>
+
+    <!--- the javascript part is added here 
+   ================================================== -->
+    <script> 
+    var currentQuestion=0;
+    var totalScore=0;
+    var cQuestion=document.getElementById('currentQuestion');
+    var totalQuestions=document.getElementById('totalQuestions');
+    var splashSecreen=document.getElementById('start');
+    var quizScreen=document.getElementById('quiz-secreen');
+    var x=0;
+    var resultSecreen=document.getElementById('resultSecreen');
+    var timeLeft=document.getElementById('timeLeft');
+    var score=document.getElementById('score');
+    var question=document.getElementById('question');
+    var opt1=document.getElementById('opt1');
+    var opt2=document.getElementById('opt2');
+    var opt3=document.getElementById('opt3');
+    var opt4=document.getElementById('opt4');
+    var btn=document.getElementsByClassName('btn');
+    var next=document.getElementById('next');
+    var quizQuestions=[
+      {
+        question:"Schools expect textbooks to be a valuable source of information for students. My research suggests, however, that textbooks that address the place of Native Americans within the history of the United States distort history to suit a particular cultural value system. In some textbooks, for example, settlers are pictured as more humane, complex, skillful, and wise than Native Americans. In essence, textbooks stereotype and depreciate the numerous Native American cultures while reinforcing the attitude that the European conquest of the New World denotes the superiority of European cultures. Although textbooks evaluate Native American architecture, political systems, and homemaking, I contend that they do it from an ethnocentric, European perspective without recognizing that other perspectives are possible. Which of the following best summarise the title of this passage path ?",
+        choice1:"Specific ways to evaluate the biases of United States history textbooks",
+        choice2:"Nontraditional methods of teaching United States history",
+        choice3:"The contributions of European immigrants to the development of the United States",
+        choice4:"Ways in which parents influence children's political attitudes",
+        ans:"Specific ways to evaluate the biases of United States history textbooks",
+      },
+          {
+        question:"The cost of producing radios in Country Q is ten percent less than the cost of producing radios in Country Y. Even after transportation fees and tariff charges are added, it is still cheaper for a company to import radios from Country Q to Country Y than to produce radios in Country Y. The statements above, if true, best support which of the following assertions?",
+        choice1:"Labor costs in Country Q are ten percent below those in Country Y.",
+        choice2:"Importing radios from Country Q to Country Y will eliminate ten percent of the manufacturing jobs in Country Y.",
+        choice3:"The tariff on a radio imported from Country Q to Country Y is less than ten percent of the cost of manufacturing the radio in Country Y.",
+        choice4:"The fee for transporting a radio from Country Q to Country Y is more than ten percent of the cost of manufacturing the radio in Country Q.",
+        ans:"The tariff on a radio imported from Country Q to Country Y is less than ten percent of the cost of manufacturing the radio in Country Y.",
+      },
+          {
+        question:"While larger banks can afford to maintain their own data-processing operations, many smaller regional and community banks are finding that the cost associated with upgrading data-processing equipment and with the development and maintenance of new products and technical staff are prohibitive. Which of the following best explains this passage ?",
+        choice1:"cost associated with",
+        choice2:"costs associated with",
+        choice3:"costs arising from",
+        choice4:"cost of",
+        ans:"costs associated with",
+      },
+          {
+        question:"Diane: As we both know, the population of this country is aging. Elderly people generally prefer not to live in harsh climates characterized by extreme temperatures. Accordingly, in this country's coastal regions, where the climate is generally most temperate, the population is likely to grow, while other regions are likely to suffer population declines. Paul: I disagree. With few exceptions, regions where the climate is harsh are characterized by comparatively low living costs, a compelling factor for retired people with little savings and on fixed incomes. Which of the following is the most likely point of disagreement between Diane and Paul?  ",
+        choice1:"the reason for the population shift toward coastal areas and away from other regions",
+        choice2:"whether the country's current decline in overall population will continue into the forseeable future",
+        choice3:"why older people find certain regions where the climate is harsh attractive places to live",
+        choice4:"whether regions characterized by harsh climates are likely to experience population declines in the foreseeable future",
+        ans:"whether regions characterized by harsh climates are likely to experience population declines in the foreseeable future",
+      },
+          {
+        question:"The levels of dissolved oxygen in the world’s ocean waters are declining precipitously. Just like humans, fish need oxygen to survive, and so in ocean areas experiencing significant levels of oxygen scarcity, or hypoxia, fish populations are plummeting. Although some hypoxic areas, called “dead zones,” occur naturally, hypoxia in coastal areas and inland waters is caused mainly by agricultural run-off and by discharge of industrial waste waters. More than one-hundred permanent dead zones, many covering thousands of square miles, exist worldwide today.Since reproductive success is the most critical factor in the sustainability of any species, the extent of this threat to marine life and genetic diversity can hardly be overstated. After several months in hypoxic waters, female fish produce fewer eggs. The author would probably view the developments discussed in the passage as",
+        choice1:"unsurprising",
+        choice2:"puzzling",
+        choice3:"alarming",
+        choice4:"encouraging",
+        ans:"alarming",
+      },
+          {
+        question:"The levels of dissolved oxygen in the world’s ocean waters are declining precipitously. Just like humans, fish need oxygen to survive, and so in ocean areas experiencing significant levels of oxygen scarcity, or hypoxia, fish populations are plummeting. Although some hypoxic areas, called “dead zones,” occur naturally, hypoxia in coastal areas and inland waters is caused mainly by agricultural run-off and by discharge of industrial waste waters. More than one-hundred permanent dead zones, many covering thousands of square miles, exist worldwide today.Since reproductive success is the most critical factor in the sustainability of any species, the extent of this threat to marine life and genetic diversity can hardly be overstated. After several months in hypoxic waters, female fish produce fewer eggs. Which of the following is the best title for the passage?",
+        choice1:"Why are Fish Gender Ratios Changing so Rapidly?",
+        choice2:"Dead Zones: Their Causes and Consequences",
+        choice3:"The Dangers of Industrial Waste-water Runoff",
+        choice4:"A Prescription for Reversing Hypoxia Levels",
+        ans:"Dead Zones: Their Causes and Consequences",
+      },
+         {
+        question:"The encounter that a portrait records is most tangibly the sitting itself, which may be brief or extended, collegial or confrontational. Renowned photographer Cartier-Bresson has expressed his passion for portrait photography by characterizing it as a duel without rules, a delicate rape. Such metaphors contrast quite sharply with Richard Avedon's conception of a sitting. While Cartier-Bresson reveals himself as an interloper and opportunist, Avedon confesses — perhaps uncomfortably — to a role as diagnostician and (by implication) psychic healer: not as someone who necessarily transforms his subjects, but as someone who reveals their essential nature. Both photographers, however, agree that the fundamental dynamic in this process lies squarely in the hands of the artist. Which of the following best characterizes a Cartier-Bresson portrait sitting?",
+        choice1:"an awkward exchange",
+        choice2:"a mutual exploitation",
+        choice3:"an uninvited intrusion",
+        choice4:"a cooperative effort",
+        ans:"an uninvited intrusion",
+      },
+         {
+        question:"A quite-different paradigm has its roots not in confrontation or consultation but in active collaboration between the artist and sitter. This very different kind of relationship was formulated most vividly by William Hazlitt in his essay entitled On Sitting for One's Picture (1823). To Hazlitt, the bond of connection between painter and sitter is most like the relationship between two lovers. Hazlitt fleshes out his thesis by recalling the career of Sir Joshua Reynolds. According to Hazlitt, Reynold's sitters were meant to enjoy an atmosphere that was both comfortable for them and conducive to the enterprise of the portrait painter, who was simultaneously their host and their contractual employee. In the case of artists like Reynolds, no fundamental difference exists between the artist's studio and all those other rooms in which the sitters spin out the days of their lives. The act of entering Reynold's studio — this social and aesthetic encounter — did not necessarily transform those who sat for him. Based on the passage information, with which of the following statements would both Avedon and Reynolds most likely agree? ",
+        choice1:"Control of the portrait-sitting experience should lie with the artist.",
+        choice2:"A portrait is most likely to reveal the subject's true self when the sitting takes place in a setting familiar to the subject.",
+        choice3:"During portrait sittings, subjects often enjoy revealing secrets about themselves to the artist.",
+        choice4:"A person can gain new insight into himself or herself by sitting for a portrait.",
+        ans:"A person can gain new insight into himself or herself by sitting for a portrait.",
+      },
+         {
+        question:"Recent dental research shows that bacteria around the gum line produces a substance that in sufficient amounts can induce preterm labor in pregnant women and can cause heart disease by clogging arteries. Both medical outcomes add to payouts by health insurers to medical-service providers. The bacteria is best removed by a dentist or trained hygienist during a routine cleaning. One health insurer has calculated that it can reduce its payouts by reimbursing subscribers who are either pregnant or at high risk of developing heart disease for the cost of one professional dental cleaning per year.Which of the following, if true, most stongly supports the assertion that the insurer's payouts to medical-service providers will decrease if it implements the reimbursement plan described above?",
+        choice1:"Dental-hygiene regimens such as brushing or flossing can slow the accumulation of the bacteria-produced substance.",
+        choice2:"The risk of developing heart disease is greater for individuals with a family history of heart disease than for those with no such history.",
+        choice3:"Pregnant women typically crave sugary foods, which are proven to contribute to tooth decay.",
+        choice4:"The dental health of pregnant women and heart-disease patients, as a group, is similar to that of the general population.",
+        ans:"The risk of developing heart disease is greater for individuals with a family history of heart disease than for those with no such history.",
+      },
+         {
+        question:"The GMAT Verbal Section is designed to test your command of standard written English, your skills in analyzing arguments, and your ability to read critically. The section consists of 3 question types: which includes all except: ",
+        choice1:" Critical Reasoning",
+        choice2:"Unordred List",
+        choice3:"Reading Comprehension",
+        choice4:"Sentence Correction",
+        ans:"Unordred List",
+      }
+    ];
+    function nextQuestion(no){
+    Inter(600);
+    cQuestion.textContent=" "+(no+1);
+    totalQuestions.textContent=" "+quizQuestions.length;
+    console.log("number "+no);
+    question.textContent=quizQuestions[no].question;
+    opt1.textContent=quizQuestions[no].choice1;
+    opt2.textContent=quizQuestions[no].choice2;
+    opt3.textContent=quizQuestions[no].choice3;
+    opt4.textContent=quizQuestions[no].choice4;
+  }
+    var z=setInterval(function(){
+        if(x==1){
+          clearInterval(z);
+          splashSecreen.style.display="none";
+          quizScreen.style.display="block";
+          nextQuestion(currentQuestion);
+        }
+        x++;
+    },10000);
+    for(var i=0;i<btn.length;i++){
+      btn[i].onclick=function(){
+        if(this.textContent==quizQuestions[currentQuestion].ans){
+            totalScore++;
+            if(currentQuestion<9){
+            clearInterval(bar);
+            currentQuestion++;
+            nextQuestion(currentQuestion);
+            console.log(totalScore);
+            }else{
+              endSecreen(); if(totalScore<7){
+                alert("Sorry, you did not pass the exam. The pass mark is 75%")
+              }
+            }
+        }
+        else{
+          if(currentQuestion<9){
+            currentQuestion++;
+            clearInterval(bar);
+            nextQuestion(currentQuestion);
+            console.log(totalScore);
+            }else{
+              endSecreen(); if(totalScore<7){
+                alert("Sorry, you did not pass the exam. The pass mark is 75%") }
+            }
+        }
+      }
+    }
+    var bar;
+    function endSecreen(){
+      quizScreen.style.display="none";
+      resultSecreen.style.display="block";
+      score.textContent=totalScore*10;
+    }
+    function Inter(set){
+    var statusTime=set;
+    timeLeft.style.width=statusTime+"px";
+    bar=setInterval(function(){
+     if(statusTime==0){
+         clearInterval(bar); 
+          if(currentQuestion<9){
+            currentQuestion++;
+            nextQuestion(currentQuestion);
+          }
+          else{
+            endSecreen();
+          } 
+           
+        }
+        timeLeft.style.width=statusTime+"px";
+        statusTime=statusTime-4;
+    },1000); 
+   }
+  next.onclick=function(){
+    if(currentQuestion<9){
+    currentQuestion++;
+    nextQuestion(currentQuestion);
+    }
+    else{
+      endSecreen();
+    }
+   
+  }
+    </script>
+  </body>
+</htm>
